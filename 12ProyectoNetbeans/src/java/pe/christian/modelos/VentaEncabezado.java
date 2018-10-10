@@ -13,17 +13,17 @@ import java.util.List;
  *
  * @author Christian
  */
-public class VentaEncavezado {
+public class VentaEncabezado {
     private int id;
     private LocalDate fecha;
     private String nombre;
     private String direccion;
     private List<VentaDetalle> detalle = new ArrayList<>();
 
-    public VentaEncavezado() {
+    public VentaEncabezado() {
     }
     
-    public VentaEncavezado(int id, LocalDate fecha, String nombre, String direccion) {
+    public VentaEncabezado(int id, LocalDate fecha, String nombre, String direccion) {
         this.id = id;
         this.fecha = fecha;
         this.nombre = nombre;

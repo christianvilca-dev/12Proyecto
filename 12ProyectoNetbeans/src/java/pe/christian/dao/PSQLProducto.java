@@ -29,7 +29,7 @@ public class PSQLProducto {
     private Producto convertir(ResultSet rs) throws SQLException{
         Producto producto = new Producto();
         producto.setId(rs.getShort("id_producto"));
-        producto.setNombre("nombre");
+        producto.setNombre(rs.getString("nombre"));
         producto.setDescripcion(rs.getString("descripcion"));
         producto.setValor(rs.getFloat("valor"));
         producto.setImagen(rs.getString("imagen"));

@@ -28,6 +28,6 @@
     </context-param>
     <context-param>
         <param-name>password</param-name>
-        <param-value>abcd.1234</param-value>
+        <param-value>abcd.12345</param-value>
     </context-param>
 </web-app>

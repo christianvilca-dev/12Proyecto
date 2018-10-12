@@ -20,15 +20,16 @@ public class PSQLConexion {
         Connection conexion = null;
         Properties propiedades = Utilidades.getInstancia().getConfiguracionBaseDeDatos();
         String url = "jdbc:postgresql://" +
-                propiedades.getProperty("servidor ") + ":" +
+                propiedades.getProperty("servidor") + ":" +
                 propiedades.getProperty("puerto") + "/" +
-                propiedades.getProperty("basededatso");
+                propiedades.getProperty("basededatos");
         String user = propiedades.getProperty("usuariobd");
         String pass = propiedades.getProperty("passwordbd");
         
         try {
+            Class.forName("org.postgresql.Driver");
             conexion = DriverManager.getConnection(url, user, pass);
-        } catch (SQLException sqle) {
+        } catch (ClassNotFoundException | SQLException sqle) {
             System.out.println(sqle.getMessage());
         }
         return conexion;

@@ -81,15 +81,23 @@
       </div>
         <div class="ed-item offset-25 web-50">
             <form class="ed-item main-center" name="_xclick" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <!-- Entorno de pruebas -->
             <!-- <form class="ed-item main-center" name="_xclick" target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post"> -->
+                <!--  -->
+                <!-- Para ser controlado por paypal cambiar "_xclick" por "_cart" -->
                 <input type="hidden" name="cmd" value="_xclick">
-                <input type="hidden" name="business" value="edstyles-colombia@outlook.com">
+                <!-- Cuenta personal -->
+                <input type="hidden" name="business" value="------@gmail.com">
                 <input type="hidden" name="currency_code" value="USD">
+                <!-- Nombre del producto a vender y el numero de factura -->
                 <input type="hidden" name="item_name" value="Factura: <%= venta.getId() %>">
+                <!-- Monto a pagar -->
                 <input type="hidden" name="amount" value="<%= total %>">
+                <!-- Imagen de paypal que en este caso es reemplazado por un boton-->
                 <!-- <input type="image" src="http://www.paypal.com/es_ES/i/btn/sc-but-01.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"> -->
                 <input type="hidden" name="add" value="1">
                 <input type="hidden" name="charset" value="utf-8">
+                <!-- Para obtener mas datos con name="on0" -->
                 <input type="hidden" name="on0" value="Comprador">
                 <input type="hidden" name="os0" value="<%= venta.getNombre() %>">
                 <input type="hidden" name="on1" value="Direccion">
